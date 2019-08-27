@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tugas-38 | JS-DOM</title>
+    <link rel="icon" href="img/logo1.jpg">
+    <style media="screen">
+      .contohstyle{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <br><br>
+    <button type="button" onclick="panggiltombol()" name="button">Run</button>
+    <br><br>
+    <hr>
+    Atribut <b>removeNameditem()</b> : <br>
+    <input value="Inputan"><br>
+    <hr>
+
+    Atribut <b>setNamedItem()</b> : <br>
+    <i>contoh</i>
+    <hr>
+
+    Atribut <b>value()</b> : <br>
+    <p id="contoh">contoh</p>
+    <hr>
+
+    <script type="text/javascript">
+      function panggiltombol(){
+
+        var a = document.getElementsByTagName('input')[0];
+        a.attributes.removeNamedItem('value');
+
+        var b = document.getElementsByTagName('i')[0];
+        var c = document.createAttribute('class');
+        c.value = "contohstyle";
+        b.attributes.setNamedItem(c);
+
+        var d = document.getElementsByTagName('button')[0];
+        var e = d.attributes[0].value;
+        document.getElementById('contoh').innerHTML = e;
+
+      }
+    </script>
+  </body>
+</html>
